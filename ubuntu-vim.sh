@@ -7,22 +7,23 @@
 
 
 # We need git and vim
-sudo apt update && sudo intall -y git vim curl
+sudo apt update && sudo apt install -y git vim curl
 
 # We need to obtain and run the dein install
-
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.cache/dein
 
 
 # Put this into our vimrc file
 
-cat > ~/.vimrctest <<'EOF'
+cat > ~/.vimrc <<-EOF
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=${HOME}/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state('$HOME/.cache/dein')
