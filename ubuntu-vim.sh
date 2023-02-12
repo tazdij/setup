@@ -11,8 +11,11 @@ sudo apt update && sudo apt install -y git vim curl
 
 # We need to obtain and run the dein install
 #curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh  # OLD Install from main (Main has new install procedure)
-curl https://raw.githubusercontent.com/Shougo/dein.vim/release/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.cache/dein
+#curl https://raw.githubusercontent.com/Shougo/dein.vim/release/bin/installer.sh > installer.sh
+curl https://raw.githubusercontent.com/Shougo/dein-installer.vim/main/installer.sh > installer.sh
+
+# Run installer and clean installer file
+sh ./installer.sh ~/.cache/dein; rm ./installer.sh
 
 
 # Put this into our vimrc file
@@ -93,5 +96,4 @@ set listchars+=tab:>-,space:.
 
 EOF
 
-# Cleanup dein installer tmp file
-rm ./installer.sh
+
